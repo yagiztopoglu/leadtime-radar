@@ -1,0 +1,161 @@
+{
+  "baseline_model": {
+    "n_train": 37951,
+    "n_test": 16181,
+    "mae": {
+      "A": 13.34,
+      "B": 7.87,
+      "C": 5.27,
+      "D": 4.19
+    },
+    "coverage": {
+      "P50": 60.7,
+      "P85": 84.9,
+      "P95": 93.5,
+      "platform": 95.6
+    },
+    "late_rate": 4.4,
+    "flags": {
+      "P85": {
+        "flagged_pct": 3.9,
+        "late_in_flagged": 15.8,
+        "late_in_unflagged": 4.0,
+        "recall": 14.0
+      },
+      "P95": {
+        "flagged_pct": 29.3,
+        "late_in_flagged": 8.5,
+        "late_in_unflagged": 2.7,
+        "recall": 57.0
+      }
+    },
+    "importance_top": {
+      "supplier_id": 32.8,
+      "erp_lead_time_days": 10.7,
+      "customer_state": 10.7,
+      "order_month": 7.0,
+      "seller_avg_delay_90d": 6.0,
+      "distance_km": 5.5
+    }
+  },
+  "_backend": "LightGBM",
+  "calibration": {
+    "fit_n": 25832,
+    "cal_n": 10475,
+    "test_n": 16181,
+    "variants": {
+      "Ham model": {
+        "coverage": {
+          "P50": 55.3,
+          "P85": 81.6,
+          "P95": 92.3
+        },
+        "mae_p50": 4.08,
+        "monthly_p85_mean_abs_dev": 8.0,
+        "monthly_p85_min": 67.4,
+        "monthly_p85_max": 94.1
+      },
+      "Statik conformal": {
+        "coverage": {
+          "P50": 67.5,
+          "P85": 93.2,
+          "P95": 97.7
+        },
+        "mae_p50": 4.42,
+        "monthly_p85_mean_abs_dev": 8.4,
+        "monthly_p85_min": 87.6,
+        "monthly_p85_max": 97.3
+      },
+      "Kayan conformal (8 hafta)": {
+        "coverage": {
+          "P50": 53.9,
+          "P85": 85.7,
+          "P95": 96.1
+        },
+        "mae_p50": 4.28,
+        "monthly_p85_mean_abs_dev": 9.3,
+        "monthly_p85_min": 66.3,
+        "monthly_p85_max": 95.2
+      }
+    },
+    "monthly_p85": {
+      "Ham model": [
+        86.6,
+        75.0,
+        94.1,
+        83.4,
+        67.4
+      ],
+      "Statik conformal": [
+        93.8,
+        87.6,
+        97.3,
+        95.3,
+        92.9
+      ],
+      "Kayan conformal (8 hafta)": [
+        95.2,
+        80.5,
+        94.3,
+        88.6,
+        66.3
+      ],
+      "Pazaryeri sozu tuttu": [
+        95.8,
+        93.0,
+        98.8,
+        96.7,
+        93.7
+      ]
+    },
+    "months": [
+      "2018-04",
+      "2018-05",
+      "2018-06",
+      "2018-07",
+      "2018-08"
+    ],
+    "platform": {
+      "coverage": 95.6,
+      "avg_days": 22.8
+    },
+    "promise": {
+      "Ham model | P85": {
+        "coverage": 81.6,
+        "avg_days": 14.5
+      },
+      "Ham model | P95": {
+        "coverage": 92.3,
+        "avg_days": 19.3
+      },
+      "Ham model | P93 (pazaryeri tutma oranina esit hedef)": {
+        "coverage": 89.4,
+        "avg_days": 17.6
+      },
+      "Statik conformal | P85": {
+        "coverage": 93.2,
+        "avg_days": 19.1
+      },
+      "Statik conformal | P95": {
+        "coverage": 97.7,
+        "avg_days": 25.0
+      },
+      "Statik conformal | P93 (pazaryeri tutma oranina esit hedef)": {
+        "coverage": 96.9,
+        "avg_days": 23.4
+      },
+      "Kayan conformal (8 hafta) | P85": {
+        "coverage": 85.7,
+        "avg_days": 16.7
+      },
+      "Kayan conformal (8 hafta) | P95": {
+        "coverage": 96.1,
+        "avg_days": 23.3
+      },
+      "Kayan conformal (8 hafta) | P93 (pazaryeri tutma oranina esit hedef)": {
+        "coverage": 94.1,
+        "avg_days": 21.5
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+# Sanal ortam ve gizli anahtarlar
+.venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Scriptlerin yeniden urettigi dosyalar
+leadtime.db
+models/
+real_data/leadtime_olist.db
+
+# Olist verisi repoya konmaz (Kaggle'dan indirilir)
+real_data/olist_data/*.csv
